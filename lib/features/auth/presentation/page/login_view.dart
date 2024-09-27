@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:se7ety/core/functions/navigation.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
 import 'package:se7ety/core/widgets/custom_Button.dart';
+import 'package:se7ety/features/auth/presentation/page/register_view.dart';
 
 class LoginView extends StatefulWidget {
   const LoginView({super.key, required this.index});
@@ -118,7 +120,10 @@ class _LoginViewState extends State<LoginView> {
                 children: [
                   Text('ليس لدي حساب ؟ '),
                   TextButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        PushWithReplacement(
+                            context, RegisterView(index: widget.index));
+                      },
                       child: Text(
                         'سجل الان',
                         style: getBodyTextStyle(color: AppColors.primaryColor),
