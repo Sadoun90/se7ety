@@ -2,14 +2,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorage {
   static String token = "token";
+  static String isOnBoardingShown = "isOnBoardingShown";
 
   static late SharedPreferences _sharedPreferences;
+
+  LocalStorage(String isOnBoardingShown, bool bool);
 
   static Future<void> init() async {
     _sharedPreferences = await SharedPreferences.getInstance();
   }
 
-  static CasheData({required String key, required dynamic value}) async {
+  static cacheData({required String key, required dynamic value}) async {
     if (value is String) {
       await _sharedPreferences.setString(key, value);
     } else if (value is int) {

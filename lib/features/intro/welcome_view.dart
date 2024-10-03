@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:se7ety/core/enum/user_type_enum.dart';
 import 'package:se7ety/core/functions/navigation.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
@@ -81,8 +82,8 @@ class WelcomeView extends StatelessWidget {
                         onTap: () {
                           Push(
                               context,
-                              RegisterView(
-                                index: 0,
+                              const RegisterView(
+                                userType: UserType.doctor,
                               ));
                         },
                         child: Container(
@@ -105,8 +106,8 @@ class WelcomeView extends StatelessWidget {
                         onTap: () {
                           Push(
                               context,
-                              RegisterView(
-                                index: 1,
+                              const RegisterView(
+                                userType: UserType.patient,
                               ));
                         },
                         child: Container(

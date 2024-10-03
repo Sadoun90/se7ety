@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:se7ety/core/enum/user_type_enum.dart';
 import 'package:se7ety/core/functions/navigation.dart';
 import 'package:se7ety/core/utils/colors.dart';
 import 'package:se7ety/core/utils/text_style.dart';
@@ -7,8 +8,8 @@ import 'package:se7ety/core/widgets/custom_Button.dart';
 import 'package:se7ety/features/auth/presentation/page/register_view.dart';
 
 class LoginView extends StatefulWidget {
-  const LoginView({super.key, required this.index});
-  final int index;
+  const LoginView({super.key, required this.userType});
+  final UserType userType;
 
   @override
   State<LoginView> createState() => _LoginViewState();
@@ -17,8 +18,8 @@ class LoginView extends StatefulWidget {
 class _LoginViewState extends State<LoginView> {
   bool isVisible = true;
 
-  String handleUserType(int index) {
-    return index == 0 ? 'دكتور' : 'مريض';
+  String handleUserType() {
+    return widget.userType == UserType.doctor ? 'دكتور' : 'مريض';
   }
 
   @override
@@ -46,7 +47,7 @@ class _LoginViewState extends State<LoginView> {
                 ),
               ),
               Text(
-                'سجل دخول الان كـ"${handleUserType(widget.index)}"',
+                'سجل دخول الان كـ"${handleUserType()}"',
                 style: getTitleTextStyle(
                     fontSize: 21, fontWeight: FontWeight.w600),
               ),
@@ -122,7 +123,7 @@ class _LoginViewState extends State<LoginView> {
                   TextButton(
                       onPressed: () {
                         PushWithReplacement(
-                            context, RegisterView(index: widget.index));
+                            context, RegisterView(userType: widget.userType));
                       },
                       child: Text(
                         'سجل الان',
