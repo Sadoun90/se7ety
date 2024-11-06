@@ -10,6 +10,7 @@ import 'package:se7ety/features/intro/onboarding/on_boarding_model.dart';
 import 'package:se7ety/features/intro/welcome_view.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
+
 class OnboardingView extends StatefulWidget {
   const OnboardingView({super.key});
 
@@ -31,7 +32,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                 onPressed: () {
                   LocalStorage.cacheData(
                       key: LocalStorage.isOnBoardingShown, value: true);
-                  PushWithReplacement(context, WelcomeView());
+                  PushWithReplacement(context, const WelcomeView());
                 },
                 child: Text(
                   'تخطي',

@@ -71,7 +71,7 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   return null;
                 },
               ),
-              Gap(10),
+              const Gap(10),
               // Email Field (Left-aligned)
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -86,7 +86,7 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   ),
                 ],
               ),
-              Gap(10),
+              const Gap(10),
               TextFormField(
                 keyboardType: TextInputType.emailAddress,
                 textDirection: TextDirection.ltr,
@@ -98,12 +98,12 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   hintStyle: getBodyTextStyle(color: Colors.grey, fontSize: 14),
                 ),
               ),
-              Gap(15),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
+              const Gap(15),
+              const Padding(
+                padding: EdgeInsets.all(8.0),
                 child: Divider(),
               ),
-              Gap(5),
+              const Gap(5),
               // Password Field (Stars next to eye icon)
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
@@ -118,7 +118,7 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   ),
                 ],
               ),
-              Gap(10),
+              const Gap(10),
               TextFormField(
                 keyboardType: TextInputType.visiblePassword,
                 style: TextStyle(color: AppColors.textColor),
@@ -139,7 +139,7 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   // ),
                 ),
               ),
-              Gap(5),
+              const Gap(5),
               Row(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -153,7 +153,7 @@ class _ContimueRegisterState extends State<ContinueRegister> {
                   ),
                 ],
               ),
-              Gap(10),
+              const Gap(10),
               // Name Field
               Row(
                 children: [
